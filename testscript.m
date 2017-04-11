@@ -7,7 +7,6 @@ lb = 9*.0254;                  %body length         %m
 l = 0.0254*5;                  %radius to wheel     %m
 rb = .0950214;                 %radius from pivot to COM   %m
 
-mb = .766502 - mw; %.419;              %body mass          %kg
 mm = .110; %.296; %.300;              %motor mass         %kg
 mw = .273185;                     %mass of wheel      %kg
 mb = .766502 - mw; %.419;              %body mass          %kg
