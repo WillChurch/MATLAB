@@ -9,16 +9,16 @@ rb = .0950214;                 %radius from pivot to COM   %m
 
 mm = .110; %.296; %.300;              %motor mass         %kg
 mw = .273185;                     %mass of wheel      %kg
-mb = .766502 - mw; %.419;              %body mass          %kg
+mb = .475344; %.419;              %body mass          %kg
 mmw = mw + mm;                 %mass of wheel plus motor %kg  
 
 Im = 1.35e-5; %5.4*10^-6;         %motor inertia      %kg*m^2  ??????????
-Ib = 0.011807; 
+Ib = 0.006611; 
 %((1/12)*mb*(lb^2+wb^2)) + (mb*rb^2); %.00177408 ;       	%kg*m^2             %kg*m^2
 Iw = 0.00047 + Im;  %.00043835 + Im;    %kg*m^2             %kg*m^2
 
 Cb = 0; %1.02*10^-3 ;       %body friction      
-Cw = 0; %0.05*10^-3 ;       %wheel friction
+Cw = 2*10^-6; %0.05*10^-3 ;       %wheel friction
 
 g = 9.81 ;              %m*s^2
 
