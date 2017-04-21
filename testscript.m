@@ -9,11 +9,13 @@ rb = .0950214;                 %radius from pivot to COM   %m
 
 mm = .110; %.296; %.300;              %motor mass         %kg
 mw = .273185;                     %mass of wheel      %kg
-mb = .475344; %.419;              %body mass          %kg
+mb = .5;%.475344; %.419;              %body mass          %kg
+%The .5 accounts for the mcu
 mmw = mw + mm;                 %mass of wheel plus motor %kg  
 
 Im = 1.35e-5; %5.4*10^-6;         %motor inertia      %kg*m^2  ??????????
-Ib = 0.006611; 
+Ib = 0.006611 + (.5-.475344)*rb^2; 
+%additional term is for mcu
 %((1/12)*mb*(lb^2+wb^2)) + (mb*rb^2); %.00177408 ;       	%kg*m^2             %kg*m^2
 Iw = 0.00047 + Im;  %.00043835 + Im;    %kg*m^2             %kg*m^2
 
@@ -48,7 +50,7 @@ rank(M)
 P = [-2.5+2*sqrt(3)*i -2.5-2*sqrt(3)*i -10]'
 
 %  
-% JJ = poly(J);
+% JJ = poly(J);67
 %  
 % Phi =  polyvalm(JJ,A);
 %  

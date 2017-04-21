@@ -96,7 +96,7 @@ pen = ss(A3D,B3D,C3D,D3D);
       0 0 0 0 0 0 0 0 0
       0 0 0 0 0 0 0 0 0] ;
   
-% P3D = [ -10 -15 -8 -5 -5 -1 -2 -3+2*sqrt(3)*i -3-2*sqrt(3)*i]
+%P3D = [ -10 -3+2*sqrt(3)*i -3-2*sqrt(3)*i -10 -3+2*sqrt(3)*i -3-2*sqrt(3)*i -10 -3+2*sqrt(3)*i -3-2*sqrt(3)*i]
  
      %-3+2*sqrt(3)*i -3-2*sqrt(3)*i -10
       
@@ -113,5 +113,5 @@ pen = ss(A3D,B3D,C3D,D3D);
 % AA = A - B*K;
 
 %K3D = place(A3D,B3D,P3D)
-K3D = [-5 -7 -5 -1 -1 -1 0 0 0];
+%K3D = [-5 -7 -5 -1 -1 -1 0 0 0];
 open_system('SSModel3D')
