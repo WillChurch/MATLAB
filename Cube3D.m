@@ -18,10 +18,11 @@
 % 
 % Cb = 0; %1.02*10^-3 ;       %body friction    
 
-Cw = 0.05*10^-6 ;       %wheel friction
+Cw = 2*10^-6;       %wheel friction
 
 g = 9.81 ;              %m*s^2
 %%%%%%%%%%%%WHEEL PARAMETERS
+
 THETA_W = [ .000237 0 0
             0 .000237 0
             0 0 .000469];       %kg*m^2
@@ -96,12 +97,12 @@ pen = ss(A3D,B3D,C3D,D3D);
       0 0 0 0 0 0 0 0 0
       0 0 0 0 0 0 0 0 0] ;
   
-%P3D = [ -10 -3+2*sqrt(3)*i -3-2*sqrt(3)*i -10 -3+2*sqrt(3)*i -3-2*sqrt(3)*i -10 -3+2*sqrt(3)*i -3-2*sqrt(3)*i]
+P3D = [ -10 -3+2*sqrt(3)*i -3-2*sqrt(3)*i -10 -3+2*sqrt(3)*i -3-2*sqrt(3)*i -10 -3+2*sqrt(3)*i -3-2*sqrt(3)*i]
  
      %-3+2*sqrt(3)*i -3-2*sqrt(3)*i -10
       
      %-5+2*sqrt(3)*i -5-2*sqrt(3)*i -20
-      %  -1+2*sqrt(3)*i -1-2*sqrt(3)*i -30]'
+     %  -1+2*sqrt(3)*i -1-2*sqrt(3)*i -30]'
 
 %  
 % JJ = poly(J);
@@ -113,5 +114,5 @@ pen = ss(A3D,B3D,C3D,D3D);
 % AA = A - B*K;
 
 %K3D = place(A3D,B3D,P3D)
-%K3D = [-5 -7 -5 -1 -1 -1 0 0 0];
+K3D = [-5 -7 -5 -1 -1 -1 0 0 0];
 open_system('SSModel3D')

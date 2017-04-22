@@ -60,4 +60,12 @@ P = [-2.5+2*sqrt(3)*i -2.5-2*sqrt(3)*i -10]'
 
 K = place(A,B,P)
 
+Q = [1 0 0
+    0 1 0
+    0 0 1];
+R = 1000;
+
+[KLQR S e] = lqr(A,B,Q,R);
 open_system('SSModel')
+KLQR
+e
