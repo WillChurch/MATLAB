@@ -41,7 +41,7 @@ D = zeros(3,1);
 pen = ss(A,B,C,D);
 
 M = [B A*B (A^2)*B];
-rank(M)
+rank(M);
 
 %  J = [-2+2*sqrt(3)*i 0 0;
 %       0 -2-2*sqrt(3)*i 0;
@@ -58,14 +58,14 @@ P = [-2.5+2*sqrt(3)*i -2.5-2*sqrt(3)*i -10]'
 % 
 % AA = A - B*K;
 
-K = place(A,B,P)
+K = place(A,B,P);
 
 Q = [1 0 0
     0 1 0
     0 0 1];
 R = 1000;
 
-[KLQR S e] = lqr(A,B,Q,R);
-open_system('SSModel')
+[KLQR, S, e] = lqr(A,B,Q,R);
 KLQR
 e
+open_system('SSModel')
