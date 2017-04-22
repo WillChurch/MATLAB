@@ -19,8 +19,8 @@ Ib = 0.006611 + (.5-.475344)*rb^2;
 %((1/12)*mb*(lb^2+wb^2)) + (mb*rb^2); %.00177408 ;       	%kg*m^2             %kg*m^2
 Iw = 0.00047 + Im;  %.00043835 + Im;    %kg*m^2             %kg*m^2
 
-Cb = 0; %1.02*10^-3 ;       %body friction      
-Cw = 2*10^-6; %0.05*10^-3 ;       %wheel friction
+Cb = 1.02*10^-3 ;       %body friction      
+Cw =  0.05*10^-3 ; 2*10^-6;      %wheel friction
 
 g = 9.81 ;              %m*s^2
 
@@ -58,14 +58,14 @@ P = [-2.5+2*sqrt(3)*i -2.5-2*sqrt(3)*i -10]'
 % 
 % AA = A - B*K;
 
-K = place(A,B,P);
+K = place(A,B,P)
 
 Q = [1 0 0
     0 1 0
     0 0 1];
-R = 1000;
+R = 2000;
 
 [KLQR, S, e] = lqr(A,B,Q,R);
-KLQR
-e
-open_system('SSModel')
+%KLQR
+%e
+%open_system('SSModel')
